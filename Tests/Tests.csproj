@@ -40,15 +40,6 @@
   <ItemGroup>
     <ProjectReference Include="..\RestSupport\RestSupport.csproj" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Compile Update="Steps\JSONManipulation.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Steps\Posts.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="App.config">

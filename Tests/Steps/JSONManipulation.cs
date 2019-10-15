@@ -4,6 +4,7 @@ using RestSharp;
 using RestSupport;
 using RestSupport.Models;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Reflection;
@@ -38,7 +39,7 @@ namespace Tutorial.Steps
         }
 
         [Given(@"I create users from (.*)")]
-        public void GivenICreateUserFromUser_Json(int userID, string jsonFile)
+        public void GivenICreateUserFromUser_Json(string jsonFile)
         {
             UserModel input = new UserModel();
             Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"Tests.Data.{jsonFile}");
@@ -49,7 +50,6 @@ namespace Tutorial.Steps
             }
 
             IRestResponse<UserModel> restResponse = client.CreateUser(input);
-            restResponse.Should().BeAssignableTo<RestResponseBase>().Which.StatusCode.Equals(HttpStatusCode.Created);
             context["response"] = restResponse;
         }
 
@@ -64,8 +64,7 @@ namespace Tutorial.Steps
                 input = (List<UserModel>)serializer.Deserialize(file, typeof(List<UserModel>));
             }
 
-            IRestResponse<JsonObject> restResponse = client.CreateMultipleUsers(input);
-            restResponse.Should().BeAssignableTo<RestResponseBase>().Which.StatusCode.Equals(HttpStatusCode.Created);
+            IRestResponse restResponse = client.CreateMultipleUsers(input);
             context["response"] = restResponse;
         }
 
@@ -97,7 +96,6 @@ namespace Tutorial.Steps
             }
 
             IRestResponse<PostModel> restResponse = client.CreatePost(input);
-            restResponse.Should().BeAssignableTo<RestResponseBase>().Which.StatusCode.Equals(HttpStatusCode.Created);
             context["response"] = restResponse;
         }
 
@@ -113,16 +111,17 @@ namespace Tutorial.Steps
             }
 
             IRestResponse<PostModel> restResponse = client.EditPost(id, input);
-            restResponse.Should().BeAssignableTo<RestResponseBase>().Which.StatusCode.Equals(HttpStatusCode.OK);
             context["response"] = restResponse;
         }
 
         [Then(@"The response has (.*) users and id (.*)")]
         public void ThenTheResponseHasUsersAndId(int userCount, int lastProcessedId)
         {
-            context["response"].Should().BeOfType<JsonObject>().Which.ContainsKey("id");
-            context["response"].Should().BeOfType<JsonObject>().Which["id"].Equals(lastProcessedId);
-            context["response"].Should().BeOfType<JsonObject>().Which.Count.Equals(userCount + 1);
+            context["response"].Should().BeOfType<RestResponse>();
+            JsonObject data = JsonConvert.DeserializeObject<JsonObject>((context["response"] as RestResponse).Content);
+            data.Keys.Count.Should().Be(3);
+            data.Keys.Should().Contain("id");
+            data["id"].Should().Be(11);
         }
 
     }

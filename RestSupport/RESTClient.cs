@@ -41,12 +41,12 @@ namespace RestSupport
             return response;
         }
 
-        public IRestResponse<JsonObject> CreateMultipleUsers(List<UserModel> input)
+        public IRestResponse CreateMultipleUsers(List<UserModel> input)
         {
             var request = new RestRequest("users", Method.POST);
             request.AddJsonBody(input);
 
-            IRestResponse<JsonObject> response = client.Execute<JsonObject>(request);
+            IRestResponse response = client.Execute(request);
             return response;
         }
 

@@ -23,9 +23,6 @@ namespace Tests.Features
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Posts.feature"
-#line hidden
-        
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
@@ -70,16 +67,11 @@ namespace Tests.Features
         public virtual void GetAllPosts()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get All Posts", null, ((string[])(null)));
-#line 3
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 4
- testRunner.When("I request all posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 5
- testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 6
- testRunner.And("The response has 100 posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
+            testRunner.When("I request all posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("The response has 100 posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -87,16 +79,11 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void GetAPost()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get a post", null, ((string[])(null)));
-#line 8
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 9
- testRunner.When("I request post 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
- testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 11
- testRunner.And("The post data is post1.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
+            testRunner.When("I request post 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("The post data is post1.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -104,16 +91,11 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void CannotPersistPosts()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cannot persist posts", null, ((string[])(null)));
-#line 13
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 14
- testRunner.Given("I create post 101 from post101.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 15
- testRunner.When("I request post 101", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
- testRunner.Then("The response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I create post 101 from post101.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.When("I request post 101", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("The response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -121,14 +103,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PostsCreationIsAcceptedForExistingUsers()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Posts creation is accepted for existing users", null, ((string[])(null)));
-#line 18
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 19
- testRunner.Given("I create post 101 from newpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
- testRunner.Then("The response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I create post 101 from newpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -136,14 +114,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PostsCreationIsAcceptedForNon_ExistingUsers()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Posts creation is accepted for non-existing users", null, ((string[])(null)));
-#line 22
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 23
- testRunner.Given("I create post 101 from badpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
- testRunner.Then("The response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I create post 101 from badpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -151,14 +125,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PostsCreationIsAcceptedWithoutABody()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Posts creation is accepted without a body", null, ((string[])(null)));
-#line 26
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 27
- testRunner.Given("I create post 101 from emptypost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
- testRunner.Then("The response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I create post 101 from emptypost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 201", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -166,14 +136,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PostsEditingIsAcceptedWithoutABody()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Posts editing is accepted without a body", null, ((string[])(null)));
-#line 30
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 31
- testRunner.Given("I edit post 100 from emptypost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
- testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I edit post 100 from emptypost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -181,14 +147,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PostsEditingIsAcceptedForExisingPosts()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Posts editing is accepted for exising posts", null, ((string[])(null)));
-#line 34
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 35
- testRunner.Given("I edit post 100 from newpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 36
- testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I edit post 100 from newpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -196,14 +158,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PostsEditingForNon_ExisingPostsThrowsError()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Posts editing for non-exising posts throws error", null, ((string[])(null)));
-#line 38
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 39
- testRunner.Given("I edit post 101 from newpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 40
- testRunner.Then("The response code is 500", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I edit post 101 from newpost.json", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 500", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -211,14 +169,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void DeleteAPost()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete a post", null, ((string[])(null)));
-#line 42
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 43
- testRunner.Given("I delete post 87", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 44
- testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I delete post 87", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -226,14 +180,10 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void DeletingAllPostsIsRefused()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deleting all posts is refused", null, ((string[])(null)));
-#line 46
-this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 47
- testRunner.Given("I delete all posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 48
- testRunner.Then("The response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
+            testRunner.Given("I delete all posts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("The response code is 404", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
