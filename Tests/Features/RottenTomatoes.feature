@@ -17,11 +17,11 @@ Scenario: Certified filtering
 Scenario: Navigation retains the settings
 	Given I set Sort by filter to Tomatometer
 	And I set Genre filter to Sci-fi & Fantasy
-	#And I move the tomatometer slider to 80%
-	And I set Providers filter to FandangoNow
+	And I move the tomatometer slider to 80%
+	And I set Providers filter to FandangoNOW
 	When I click the first movie
 	And I navigate back
 	Then The Sort by filter is Tomatometer
 	And The Genre filter is Sci-fi & Fantasy
-	#And The Tomatometer slider is 80%
-	And The Providers filter is FandangoNow
+	And The Tomatometer slider is 80%
+	And The Providers filter is FandangoNOW

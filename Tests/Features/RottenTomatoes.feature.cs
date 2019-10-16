@@ -113,12 +113,14 @@ namespace Tests.Features
             this.FeatureBackground();
             testRunner.Given("I set Sort by filter to Tomatometer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
             testRunner.And("I set Genre filter to Sci-fi & Fantasy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("I set Providers filter to FandangoNow", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("I move the tomatometer slider to 80%", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("I set Providers filter to FandangoNOW", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("I click the first movie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("I navigate back", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("The Sort by filter is Tomatometer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("The Genre filter is Sci-fi & Fantasy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("The Providers filter is FandangoNow", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("The Tomatometer slider is 80%", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("The Providers filter is FandangoNOW", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
