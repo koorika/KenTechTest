@@ -22,6 +22,8 @@ namespace KenTechTest.Steps
             context["response"].Should().BeAssignableTo<RestResponseBase>().Which.StatusCode.Should().Be(statusCode);
         }
 
+        //The following steps may be refactored into a single one
+
         [Then(@"The response has (.*) users")]
         public void ThenTheResponseHasUsers(int count)
         {
