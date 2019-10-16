@@ -27,11 +27,14 @@
   </ItemGroup>
   
   <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="FluentAssertions" Version="5.9.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.3.2" />
     <PackageReference Include="MSTest.TestFramework" Version="1.3.2" />
     <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="77.0.3865.4000" />
     <PackageReference Include="SpecFlow" Version="3.0.225" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
     <PackageReference Include="SpecRun.SpecFlow" Version="3.0.391" />
@@ -39,6 +42,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RestSupport\RestSupport.csproj" />
+    <ProjectReference Include="..\WebDriverSupport\WebDriverSupport.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Steps\WebDriverSteps.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
